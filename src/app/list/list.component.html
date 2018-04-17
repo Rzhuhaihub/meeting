@@ -1,0 +1,188 @@
+<div class="list-content">
+    <div class="left">
+        <p class="left-cal">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="dp3" placeholder="Input disabled" disabled>
+                      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                    </mat-form-field>
+        </p>
+        <div>
+            <span class="blueBlock"></span><span>日程安排</span>
+        </div>
+        <div class="meeting-list">
+              <div class="meeting-item" *ngFor="let item of datas">
+                  <div class="meeting-time">
+                      <p style="color: #AAAAAA">03/08</p>
+                      <p [style.color]="switchColor(item)">19:00:00</p>
+                  </div>
+                  <div class="meeting-line"></div> 
+                  <div class="right">
+                  <div class="flagI">
+                    <div class="meeting-circle" [style.background]="switchColor(item)">
+                        <div class="meeting-circle2"></div>
+                    </div>
+                    <div class="cardStyle-san" [style.border-right-color]="switchColor(item)"></div>
+                  </div>
+                  <div class="cardStyle" 
+                  [style.background]="switchColor(item)"
+                  >
+                      <p style="border-bottom: 1px dashed white">
+                          关于什么得日够
+                      </p>
+                      <p>
+                          发起人：周杰伦
+                      </p>
+                      <P>
+                          会议时间：19:00:00
+                      </P>
+                      <p>
+                          会议地址：人民大会堂
+                      </p>
+                  </div>
+                </div>
+              </div>
+        </div>           
+    </div>
+    <div class="right">
+            <mat-tab-group style="width: 100%">
+                    <mat-tab label="以预约">
+                            <mat-list>
+                                   <div class="rightItem"  *ngFor="let item of datas">
+                                       <div class="rightItem-left">
+                                          <div style="background: RGBA(64, 60, 55, 0.6);height:74px;width: 100%;padding-left: 20px">
+                                              <p style="color:white;margin: 0"><i class="iconfont icon-dingwei"></i> 综合楼3栋405</p>
+                                              <p style="display: flex;justify-content: flex-start;"
+                                              ><button  style="border-radius: 4px;border: 1px solid white;background:none;color: white">白板</button>
+                                                <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">视频</button>
+                                                <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">沙发</button></p>
+                                          </div>
+                                       </div>
+                                       <div class="rightItem-right">
+                                              <p style="font-size: 26px;color: #333333;margin: 0">会议主题：关于会议系统UI设计界面讨论</p>
+                                              <p style="font-size: 16px;color: #333333;">会议时间：2018-03-25   14：30-15：30  60分钟</p>
+                                              <P style="font-size: 16px;color: #333333;">发起人：彩虹  参会人数：16/19人  确认</P>
+                                              <div class="member_div">
+                                               <div class="mem_avatars">
+                                                  <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                  </app-avatar>
+                                                  <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                  </app-avatar>
+                                                  <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                  </app-avatar>
+                                                  <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                  </app-avatar>
+                                                  <div style="font: size 16px;color: #4693FF">查看详情</div>
+                                                </div>
+                                                <!-- <button mat-raised-button  style="color:#4693FF">加入会议</button> -->
+                                              </div> 
+                                       </div>
+                                       <div class="tag" style="background:#7CD5A7;">以预约</div>
+                                   </div>
+                            </mat-list>
+                    </mat-tab>
+                    <mat-tab label="进行中">
+                        <mat-list>
+                        <div class="rightItem"  *ngFor="let item of datas">
+                            <div class="rightItem-left">
+                               <div style="background: RGBA(64, 60, 55, 0.6);height:74px;width: 100%;padding-left: 20px">
+                                   <p style="color:white;margin: 0"><i class="iconfont icon-dingwei"></i> 综合楼3栋405</p>
+                                   <p style="display: flex;justify-content: flex-start;"
+                                   ><button  style="border-radius: 4px;border: 1px solid white;background:none;color: white">白板</button>
+                                     <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">视频</button>
+                                     <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">沙发</button></p>
+                               </div>
+                            </div>
+                            <div class="rightItem-right">
+                                   <p style="font-size: 26px;color: #333333;margin: 0">会议主题：关于会议系统UI设计界面讨论</p>
+                                   <p style="font-size: 16px;color: #333333;">会议时间：2018-03-25   14：30-15：30  60分钟</p>
+                                   <P style="font-size: 16px;color: #333333;">发起人：彩虹  参会人数：16/19人  确认</P>
+                                   <div class="member_div">
+                                    <div class="mem_avatars">
+                                       <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                       </app-avatar>
+                                       <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                       </app-avatar>
+                                       <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                       </app-avatar>
+                                       <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                       </app-avatar>
+                                       <div style="font: size 16px;color: #4693FF">查看详情</div>
+                                     </div>
+                                     <button mat-raised-button  style="color:#4693FF">加入会议</button>
+                                   </div> 
+                            </div>
+                            <div class="tag" style="background: orangered;">进行中</div>
+                        </div>
+                 </mat-list></mat-tab>
+                    <mat-tab label="已结束">
+                            <mat-list>
+                                    <div class="rightItem"  *ngFor="let item of datas">
+                                        <div class="rightItem-left">
+                                           <div style="background: RGBA(64, 60, 55, 0.6);height:74px;width: 100%;padding-left: 20px">
+                                               <p style="color:white;margin: 0"><i class="iconfont icon-dingwei"></i> 综合楼3栋405</p>
+                                               <p style="display: flex;justify-content: flex-start;"
+                                               ><button  style="border-radius: 4px;border: 1px solid white;background:none;color: white">白板</button>
+                                                 <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">视频</button>
+                                                 <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">沙发</button></p>
+                                           </div>
+                                        </div>
+                                        <div class="rightItem-right">
+                                               <p style="font-size: 26px;color: #333333;margin: 0">会议主题：关于会议系统UI设计界面讨论</p>
+                                               <p style="font-size: 16px;color: #333333;">会议时间：2018-03-25   14：30-15：30  60分钟</p>
+                                               <P style="font-size: 16px;color: #333333;">发起人：彩虹  参会人数：16/19人  确认</P>
+                                               <div class="member_div">
+                                                <div class="mem_avatars">
+                                                   <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                   </app-avatar>
+                                                   <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                   </app-avatar>
+                                                   <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                   </app-avatar>
+                                                   <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                                   </app-avatar>
+                                                   <div style="font: size 16px;color: #4693FF">查看详情</div>
+                                                 </div>
+                                                 <button mat-raised-button  style="color:#ABABAB" disabled>加入会议</button>
+                                               </div> 
+                                        </div>
+                                        <div class="tag" style="background: #4693FF;">已结束</div>
+                                    </div>
+                             </mat-list>
+                    </mat-tab>
+                    <mat-tab label="未进行"> <mat-list>
+                            <div class="rightItem"  *ngFor="let item of datas">
+                                <div class="rightItem-left">
+                                   <div style="background: RGBA(64, 60, 55, 0.6);height:74px;width: 100%;padding-left: 20px">
+                                       <p style="color:white;margin: 0"><i class="iconfont icon-dingwei"></i> 综合楼3栋405</p>
+                                       <p style="display: flex;justify-content: flex-start;"
+                                       ><button  style="border-radius: 4px;border: 1px solid white;background:none;color: white">白板</button>
+                                         <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">视频</button>
+                                         <button style="border-radius: 4px;border: 1px solid white;margin-left: 10px;background:none;color: white">沙发</button></p>
+                                   </div>
+                                </div>
+                                <div class="rightItem-right">
+                                       <p style="font-size: 26px;color: #333333;margin: 0">会议主题：关于会议系统UI设计界面讨论</p>
+                                       <p style="font-size: 16px;color: #333333;">会议时间：2018-03-25   14：30-15：30  60分钟</p>
+                                       <P style="font-size: 16px;color: #333333;">发起人：彩虹  参会人数：16/19人  确认</P>
+                                       <div class="member_div">
+                                        <div class="mem_avatars">
+                                           <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                           </app-avatar>
+                                           <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                           </app-avatar>
+                                           <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                           </app-avatar>
+                                           <app-avatar src='http://static.dingtalk.com/media/lADPBbCc1Vk_hNjNA8DNAhw_540_960.jpg' type='radio' size='39'>
+                                           </app-avatar>
+                                           <div style="font: size 16px;color: #4693FF">查看详情</div>
+                                         </div>
+                                         <!-- <button mat-raised-button  style="color:#4693FF">加入会议</button> -->
+                                       </div> 
+                                </div>
+                                <div class="tag" style="background: #FFD35D;">未进行</div>
+                            </div>
+                     </mat-list></mat-tab>
+            </mat-tab-group>
+    </div>
+</div>
